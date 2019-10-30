@@ -10,7 +10,7 @@ public class MyHbSqlConnection {
 	
 	private MyHbSqlConnection() throws SQLException
 	{
-		connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr","root","pass@word1");
+		connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/hr","root","Passw0rd@1234");
 	}
 	
 	public static Connection getMyConnection() throws SQLException

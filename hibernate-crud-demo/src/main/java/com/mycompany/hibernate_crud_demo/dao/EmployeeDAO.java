@@ -16,7 +16,5 @@ public interface EmployeeDAO {
 	
 	public void deleteEmployee(int id);
 	
-	public void updateEmployee(int id,String fname,String lname,String email);
-	
-	
+
 }

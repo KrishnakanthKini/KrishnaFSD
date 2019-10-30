@@ -5,9 +5,7 @@ import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Query;
-import javax.transaction.Transaction;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.modelmapper.ModelMapper;
@@ -126,33 +124,23 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 		}
 		
 		
-	}
-
-	
-	@Override
-	public void updateEmployee(int id,String fname,String lname,String email) {
-		// TODO Auto-generated method stub
-		session=sessionFactory.openSession();
-		session.getTransaction().begin();
-		Employee e=session.get(Employee.class, id);
-		if(e!=null)
-		{
-			e.setFirstName(fname);
-			e.setLastName(lname);
-			e.setEmail(email);
-			System.out.println("Updated Sucessfully");
-			session.getTransaction().commit();
-		}
 		
-		else
-		{
-			System.out.println("no such record found.");
-		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 	}
 
-
-	
-	
 }

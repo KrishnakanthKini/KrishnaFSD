@@ -11,14 +11,11 @@ import java.util.List;
 import org.customer.app.connection.hbsql.MyHbSqlConnection;
 import org.customer.app.model.Customer;
 
-import java.util.Scanner;
-
 public class CustomerFactoryImpl implements CustomerFactory {
 	
 	private Connection connection=null;
 	private PreparedStatement pStatement=null;
 	private Statement statement=null;
-	Scanner sc =new Scanner(System.in);
 	
 	Customer tempCustomer=null;
 	public CustomerFactoryImpl() {
@@ -107,60 +104,4 @@ public class CustomerFactoryImpl implements CustomerFactory {
 		
 	}
 
-	public void updateCustomer(int id) {
-		// TODO Auto-generated method stub
-		try {
-			System.out.println("updated name: ");
-			String name=sc.next();
-			System.out.print("updated email: ");
-			String email=sc.next();
-			pStatement=connection.prepareStatement("update customer set name=? , email=? where id=?");
-			pStatement.setString(1,name );
-			pStatement.setString(2, email);
-			pStatement.setInt(3, id);
-			int i=pStatement.executeUpdate();
-			if(i<=0)
-			{
-				System.out.println("no such id.");
-			}
-			else
-			{
-				System.out.println("updated sucessfully..");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		
-		
-	}
-
-	public Customer deleteCustomer(int id) {
-		
-		
-		
-			// TODO Auto-generated method stub
-			
-			try {
-				
-		
-				pStatement=connection.prepareStatement("delete from customer where id=?");
-				pStatement.setInt(1, id);
-		
-				int count=pStatement.executeUpdate();
-				System.out.println(count+" row(s) deleted");
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			
-			
-			return tempCustomer;
-		}
-
-		
-	}
-
-
-
+}
