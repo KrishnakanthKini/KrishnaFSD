@@ -20,7 +20,7 @@ public class EmployeeServiceImpl implements EmployeeService{
 
 	@Override
 	@Transactional
-	public List<Employee> getALlEmployee() {
+	public List<Employee> getAllEmployee() {
 		// TODO Auto-generated method stub
 		return employeeRepository.findAll();
 	}

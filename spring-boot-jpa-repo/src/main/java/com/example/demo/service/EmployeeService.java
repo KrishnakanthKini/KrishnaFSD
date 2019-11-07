@@ -7,7 +7,7 @@ import com.example.demo.entity.Employee;
 
 public interface EmployeeService {
 	
-	public List<Employee> getALlEmployee();
+	public List<Employee> getAllEmployee();
 	public Optional<Employee> getEmployeeByID(int theID);
 	
 

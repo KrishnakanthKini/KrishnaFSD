@@ -39,9 +39,7 @@ public class SpringBootJpaRepoApplication {
 			List<Image> list=new ArrayList<Image>();
 			Album tempAlbum=new Album();
 			Image tempImage=new Image();
-			
 			tempAlbum.setName("Doe");
-			
 			tempImage.setType("jpg.");
 			list.add(tempImage);
 			tempImage.setAlbum(tempAlbum);

@@ -23,6 +23,6 @@ public class EmployeeController {
 	public List<Employee> list()
 
 	{
-		return employeeService.getALlEmployee();
+		return employeeService.getAllEmployee();
 	}
 }
