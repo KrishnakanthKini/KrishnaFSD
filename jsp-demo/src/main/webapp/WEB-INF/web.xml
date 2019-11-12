@@ -8,10 +8,18 @@
   	<servlet-name>MyController</servlet-name>
   	<display-name>MyController</display-name>
   	<description></description>
-  	<servlet-class>comm.example.controller.MyController</servlet-class>
+  	<servlet-class>MyController</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>MyController</servlet-name>
   	<url-pattern>/controller.do</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  <servlet-name>A</servlet-name>
+  <servlet-class>ListController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>A</servlet-name>
+  	<url-pattern>/list</url-pattern>
   </servlet-mapping>
 </web-app>

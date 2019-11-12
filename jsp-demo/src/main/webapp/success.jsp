@@ -1,4 +1,5 @@
-<%@page import="comm.example.model.League"%>
+
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -10,10 +11,8 @@
 <body>
 <%
 
-	League League=(League)request.getAttribute("success");
-	out.println("Season: "+League.getseason());
-	out.println("year: "+League.getyear());
-	out.println("title: "+League.gettitle());
+	Customer customer=(Customer)request.getAttribute("success");
+	out.println("First Name: "+customer.getFirstName());
 
 %>
 </body>

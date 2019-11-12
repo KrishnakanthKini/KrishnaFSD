@@ -8,22 +8,22 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.dao.ImageRepository;
-import com.example.demo.dao.AlbumRepository;
-import com.example.demo.entity.Image;
-import com.example.demo.entity.Album;
+import com.example.demo.dao.CourseRepository;
+import com.example.demo.dao.InstructorRepository;
+import com.example.demo.entity.Course;
+import com.example.demo.entity.Instructor;
 
 @SpringBootApplication
 public class SpringBootJpaRepoApplication {
 	
-	private ImageRepository imageRepository;
-	private AlbumRepository albumRepository;
+	private CourseRepository courseRepository;
+	private InstructorRepository instructorRepository;
 
 	
-	public SpringBootJpaRepoApplication(ImageRepository imageRepository, AlbumRepository albumRepository) {
+	public SpringBootJpaRepoApplication(CourseRepository courseRepository, InstructorRepository instructorRepository) {
 		super();
-		this.imageRepository = imageRepository;
-		this.albumRepository = albumRepository;
+		this.courseRepository = courseRepository;
+		this.instructorRepository = instructorRepository;
 	}
 
 	public static void main(String[] args) {
@@ -31,21 +31,23 @@ public class SpringBootJpaRepoApplication {
 	}
 	
 	@Component
-	class ImageCommand implements CommandLineRunner
+	class CourseCommand implements CommandLineRunner
 	{
 
 		@Override
 		public void run(String... args) throws Exception {
-			List<Image> list=new ArrayList<Image>();
-			Album tempAlbum=new Album();
-			Image tempImage=new Image();
-			tempAlbum.setName("Doe");
-			tempImage.setType("jpg.");
-			list.add(tempImage);
-			tempImage.setAlbum(tempAlbum);
-			tempAlbum.setImages(list);
-			albumRepository.save(tempAlbum);
-			imageRepository.save(tempImage);
+			List<Course> list=new ArrayList<Course>();
+			Instructor tempInstructor=new Instructor();
+			Course tempCourse=new Course();
+			tempInstructor.setFirstName("John");
+			tempInstructor.setLastName("Doe");
+			tempInstructor.setEmail("john@luv2code.com");
+			tempCourse.setTitle("Learning Spring.");
+			list.add(tempCourse);
+			tempCourse.setInstructor(tempInstructor);
+			tempInstructor.setCourses(list);
+			instructorRepository.save(tempInstructor);
+			courseRepository.save(tempCourse);
 			
 		}
 		
